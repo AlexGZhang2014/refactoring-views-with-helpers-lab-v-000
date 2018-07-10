@@ -1183,3 +1183,38 @@ Processing by SongsController#index as HTML
   [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
   Rendered songs/index.html.erb within layouts/application (64.0ms)
 Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs" for 65.191.0.83 at 2018-07-10 04:55:19 +0000
+Cannot render console from 65.191.0.83! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered songs/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 190ms (Views: 185.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/songs/new" for 65.191.0.83 at 2018-07-10 04:55:22 +0000
+Cannot render console from 65.191.0.83! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 65.191.0.83 at 2018-07-10 04:55:32 +0000
+Cannot render console from 65.191.0.83! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tSES/oYVpgz7xanzQydEAT3t7LUS80oApeRGQ4KWSA4dU7FDQ91ZB5TGfY+i+rLq0ZSxHJqpmyFrg+APDMPYZg==", "song"=>{"title"=>"My Name is Julio", "artist_name"=>""}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", ""]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "My Name is Julio"], ["artist_id", 3], ["created_at", "2018-07-10 04:55:32.854817"], ["updated_at", "2018-07-10 04:55:32.854817"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.89.225.105:58957/songs/8
+Completed 302 Found in 11ms (ActiveRecord: 2.4ms)
